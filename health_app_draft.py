@@ -3,6 +3,8 @@ from date_time_module import *
 from time import sleep
 import json
 # for saving information
+import glob
+# for dealing with file system
 from blood_pressure_applet import *
 # how to import functions from separate py file
 
@@ -46,15 +48,20 @@ enter_pats = enter_multi_pats()
 
 json_object = json.dumps(enter_pats, indent=4)
 
-# writing to sample.json
-# with open("patient_records", "w") as outfile:
-#     outfile.write(json_object)
-
-x = current_day()
+x = format_cur_4_sav()
 
 with open(('patient_records' + x + '.json'), "w") as outfile:
     outfile.write(json_object)
 
+# use this to check file contents
+glob_container = None
+for name in glob.glob('*.json'):
+    glob_container = name
+    print(name)
+f = open(glob_container)
+data = json.load(f)
+dict(data)
+print(data)
 
 
 
