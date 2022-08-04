@@ -1,21 +1,35 @@
 # this will be a specific module for blood pressure
+from patient_info_module import *
 
-def pat_data_2_dict():
-    dict_empty = {}
+
+# enter patients and ask if more
+def enter_multi_pats():
+    empty_dict = {}
+    while True:
+        x = bp_data()
+        empty_dict.update(x)
+        ask_again = input('Do you have another patient to add? ')
+        if not ask_again:
+            break
+    return empty_dict
+
+
+def bp_data():
+    bp_container = {}
     # while True:
-    while True:
-        f_n = input('Please enter the first name: ')
-        if not f_n.isalpha():
-            print('This is not a valid entry. Please try again.')
-        else:
-            break
-    while True:
-        l_n = input('Please enter the last name: ')
-        if not l_n.isalpha():
-            print('This is not a valid entry. Please try again.')
-        else:
-            break
-    names_combined = l_n + '_' + f_n
+    # while True:
+    #     f_n = input('Please enter the first name: ')
+    #     if not f_n.isalpha():
+    #         print('This is not a valid entry. Please try again.')
+    #     else:
+    #         break
+    # while True:
+    #     l_n = input('Please enter the last name: ')
+    #     if not l_n.isalpha():
+    #         print('This is not a valid entry. Please try again.')
+    #     else:
+    #         break
+    names_combined = create_patient()
     list_container = []
     while True:
         while True:
@@ -35,20 +49,8 @@ def pat_data_2_dict():
         ask_again = input('Is there another entry?')
         if not ask_again:
             break
-    dict_empty.update({names_combined: list_container})
-    return dict_empty
-
-
-# enter patients and ask if more
-def enter_multi_pats():
-    empty_dict = {}
-    while True:
-        x = pat_data_2_dict()
-        empty_dict.update(x)
-        ask_again = input('Do you have another patient to add? ')
-        if not ask_again:
-            break
-    return empty_dict
+    bp_container.update({names_combined: list_container})
+    return bp_container
 
 
 def define_if_hypertensive(patients):

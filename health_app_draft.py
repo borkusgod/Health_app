@@ -44,20 +44,22 @@ def opening_screen():
 # beginning of bp section
 
 
-enter_pats = enter_multi_pats()
+create_pat_bp_records = enter_multi_pats()
+json_object = json.dumps(create_pat_bp_records, indent=4)
 
-json_object = json.dumps(enter_pats, indent=4)
-
-x = format_cur_4_sav()
-
-with open(('patient_records' + x + '.json'), "w") as outfile:
+# save func output to json
+with open(('patient_records' + (format_cur_4_sav()) + '.json'), "w") as outfile:
     outfile.write(json_object)
 
 # use this to check file contents
 glob_container = None
+# counter for below
+from_for = 0
 for name in glob.glob('*.json'):
+    from_for += 1
     glob_container = name
-    print(name)
+    # print(name)
+print(f'There are {from_for} patient record files in this directory.')
 f = open(glob_container)
 data = json.load(f)
 dict(data)
