@@ -9,7 +9,10 @@
 # age, smoker, non-smoker, drinker?, etc....
 
 import os
+from date_time_module import *
 from time import sleep
+from blood_pressure_applet import *
+# how to import functions from separate py file
 
 # global variables
 body_weight = None
@@ -40,7 +43,13 @@ def opening_screen():
 
     os.system('cls')
 
+# ----------program start\
 
-# ----------program start
+# opening_screen()
 
-opening_screen()
+# beginning of bp section
+
+
+print(pat_data_2_dict())
+
+
