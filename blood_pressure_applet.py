@@ -1,26 +1,4 @@
 # this will be a specific module for blood pressure
-# def input_patient_name():
-#     f_n = input('Please enter the first name: ')
-#     l_n = input('Please enter the last name: ')
-#     names_combined = f_n + '_' + l_n
-#     return names_combined
-#
-#
-# def patient_bp_list():
-#     list_loop = True
-#     list_container = []
-#     print('Making list for bp entries')
-#     while True:
-#         sys_entry = input('What is your systolic (The top number): ')
-#         dia_entry = input('What is your diastolic (The bottom number): ')
-#         combine_for_list = sys_entry + '/' + dia_entry
-#         list_container.append(combine_for_list)
-#         ask_again = input('Is there another entry?')
-#         if not ask_again:
-#             break
-#     return list_container
-
-
 def pat_data_2_dict():
     dict_empty = {}
     # while True:
@@ -58,30 +36,6 @@ def pat_data_2_dict():
             break
     dict_empty.update({names_combined: list_container})
     return dict_empty
-
-
-# def making_list_with_mult():
-#     func_state = True
-#     list_container = []
-#     print('this func will be for making lists with multiple entries')
-#
-#     def insert_into_list():
-#         sys_input = input('Please enter your top number: ')
-#         dia_input = input('Please enter your bottom number: ')
-#         conv_for_list = sys_input + '/' + dia_input
-#         list_container.append(conv_for_list)
-#
-#     while func_state:
-#         insert_into_list()
-#         ask_again = input('Is there another entry? ')
-#         if not ask_again:
-#             break
-#     return list_container
-
-
-def patient_count(patients):
-    how_many_pats = len(patients)
-    return f'There are {how_many_pats} patients in this list.'
 
 
 def define_if_hypertensive(patients):
