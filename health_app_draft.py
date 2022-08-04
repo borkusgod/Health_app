@@ -11,6 +11,8 @@
 import os
 from date_time_module import *
 from time import sleep
+import json
+# for saving information
 from blood_pressure_applet import *
 # how to import functions from separate py file
 
@@ -50,6 +52,17 @@ def opening_screen():
 # beginning of bp section
 
 
-print(pat_data_2_dict())
+# print(pat_data_2_dict())
+first_run = pat_data_2_dict()
+print(first_run)
+
+
+json_object = json.dumps(first_run, indent=4)
+
+# writing to sample.json
+with open("initial_json_test.json", "w") as outfile:
+    outfile.write(json_object)
+
+
 
 
