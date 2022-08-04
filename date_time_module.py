@@ -1,5 +1,8 @@
-import datetime
+from datetime import datetime
 
 
 def current_day():
-    return datetime.datetime.now()
+    x = datetime.now()
+    formatted = x.strftime("%Y_%m_%d@%Hhrs%Mmins")
+    return formatted
+

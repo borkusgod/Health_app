@@ -1,13 +1,3 @@
-# this will be a simple, console-driven app that
-# monitors health and compares to given stats or
-# can use beautifulsoup4 to reference online
-
-# suggested functions for app:
-# blood sugar, blood pressure
-
-# also collect body stats like weight, height,
-# age, smoker, non-smoker, drinker?, etc....
-
 import os
 from date_time_module import *
 from time import sleep
@@ -52,15 +42,17 @@ def opening_screen():
 # beginning of bp section
 
 
-# print(pat_data_2_dict())
-first_run = pat_data_2_dict()
-print(first_run)
+enter_pats = enter_multi_pats()
 
-
-json_object = json.dumps(first_run, indent=4)
+json_object = json.dumps(enter_pats, indent=4)
 
 # writing to sample.json
-with open("initial_json_test.json", "w") as outfile:
+# with open("patient_records", "w") as outfile:
+#     outfile.write(json_object)
+
+x = current_day()
+
+with open(('patient_records' + x + '.json'), "w") as outfile:
     outfile.write(json_object)
 
 

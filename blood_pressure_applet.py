@@ -1,4 +1,5 @@
 # this will be a specific module for blood pressure
+
 def pat_data_2_dict():
     dict_empty = {}
     # while True:
@@ -14,7 +15,7 @@ def pat_data_2_dict():
             print('This is not a valid entry. Please try again.')
         else:
             break
-    names_combined = f_n + '_' + l_n
+    names_combined = l_n + '_' + f_n
     list_container = []
     while True:
         while True:
@@ -36,6 +37,18 @@ def pat_data_2_dict():
             break
     dict_empty.update({names_combined: list_container})
     return dict_empty
+
+
+# enter patients and ask if more
+def enter_multi_pats():
+    empty_dict = {}
+    while True:
+        x = pat_data_2_dict()
+        empty_dict.update(x)
+        ask_again = input('Do you have another patient to add? ')
+        if not ask_again:
+            break
+    return empty_dict
 
 
 def define_if_hypertensive(patients):
