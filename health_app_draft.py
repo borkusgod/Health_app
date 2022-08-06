@@ -1,10 +1,7 @@
 import os
-from date_time_module import *
+from date_time_module import format_cur_4_sav
+from file_related_module import bp_json_file
 from time import sleep
-import json
-# for saving information
-import glob
-# for dealing with file system
 from blood_pressure_applet import *
 # how to import functions from separate py file
 
@@ -45,25 +42,11 @@ def opening_screen():
 
 
 create_pat_bp_records = enter_multi_pats()
-json_object = json.dumps(create_pat_bp_records, indent=4)
+# this will ask for pat info
 
-# save func output to json
-with open(('patient_records' + (format_cur_4_sav()) + '.json'), "w") as outfile:
-    outfile.write(json_object)
-
-# use this to check file contents
-glob_container = None
-# counter for below
-from_for = 0
-for name in glob.glob('*.json'):
-    from_for += 1
-    glob_container = name
-    # print(name)
-print(f'There are {from_for} patient record files in this directory.')
-f = open(glob_container)
-data = json.load(f)
-dict(data)
-print(data)
+bp_json_file(create_pat_bp_records)
+# this will take above func and save it to json with current date and time
+# and display how many files are in directory
 
 
 

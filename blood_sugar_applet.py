@@ -8,7 +8,7 @@ from patient_info_module import *
 
 
 def bs_data():
-    bs_dict_empty = {}
+    bs_dict_container = {}
     names_combined = create_patient()
     list_container = []
     while True:
@@ -22,8 +22,8 @@ def bs_data():
         ask_again = input('Is there another entry?')
         if not ask_again:
             break
-    bs_dict_empty.update({names_combined: list_container})
-    return bs_dict_empty
+    bs_dict_container.update({names_combined: list_container})
+    return bs_dict_container
 
 
 print(bs_data())
