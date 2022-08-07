@@ -10,7 +10,7 @@ from patient_info_module import *
 def bs_data():
     bs_dict_container = {}
     names_combined = create_patient()
-    list_container = []
+    bs_entries_container = []
     while True:
         while True:
             bs_entry = input('What was your recorded blood sugar level? ')
@@ -18,11 +18,11 @@ def bs_data():
                 print('This is not a valid entry.')
             else:
                 break
-        list_container.append(bs_entry)
+        bs_entries_container.append(bs_entry)
         ask_again = input('Is there another entry?')
         if not ask_again:
             break
-    bs_dict_container.update({names_combined: list_container})
+    bs_dict_container.update({names_combined: bs_entries_container})
     return bs_dict_container
 
 

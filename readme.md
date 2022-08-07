@@ -32,6 +32,16 @@ patient_fdata = {
 # (remember to be mindful of the difference between lists and dicts. Lists 
 # are reference by index and dicts by keys aka 'names' etc)
 
+# pat_dict_for_testing = {'doe_jon': ['125/85', '130/85', '135/85'],
+#                        'doe_jane': ['135/85', '140/85', '150/85']}
+# pat_list_for_testing = (('doe_jon',  ['125/85', '130/85', '135/85']),
+#                        ('doe_jane',  ['125/85', '130/85', '135/85']))
+
+# print(create_dict)
+# print(create_dict['doe_jon'][1]) -> 130/85
+# print(create_list)
+# print(create_list[0][1][1]) -> 130/85
+
 # print(patient_fdata['John Doe']['bp_data_date_entered'][1]) -> 120/85
 # print(patient_fdata['John Doe']['bs_data_date_entered'][1]) -> 118
 

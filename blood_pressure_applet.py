@@ -4,33 +4,20 @@ from patient_info_module import *
 
 # enter patients and ask if more
 def enter_multi_pats():
-    empty_dict = {}
+    patients_container = {}
     while True:
         x = bp_data()
-        empty_dict.update(x)
+        patients_container.update(x)
         ask_again = input('Do you have another patient to add? ')
         if not ask_again:
             break
-    return empty_dict
+    return patients_container
 
 
 def bp_data():
     bp_container = {}
-    # while True:
-    # while True:
-    #     f_n = input('Please enter the first name: ')
-    #     if not f_n.isalpha():
-    #         print('This is not a valid entry. Please try again.')
-    #     else:
-    #         break
-    # while True:
-    #     l_n = input('Please enter the last name: ')
-    #     if not l_n.isalpha():
-    #         print('This is not a valid entry. Please try again.')
-    #     else:
-    #         break
     names_combined = create_patient()
-    list_container = []
+    bp_values_container = []
     while True:
         while True:
             sys_entry = input('What is your systolic (The top number): ')
@@ -45,11 +32,11 @@ def bp_data():
             else:
                 break
         combine_for_list = sys_entry + '/' + dia_entry
-        list_container.append(combine_for_list)
+        bp_values_container.append(combine_for_list)
         ask_again = input('Is there another entry?')
         if not ask_again:
             break
-    bp_container.update({names_combined: list_container})
+    bp_container.update({names_combined: bp_values_container})
     return bp_container
 
 
